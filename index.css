@@ -1,0 +1,90 @@
+*, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('./assets/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+canvas {
+    background: url('./assets/arena.png');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 40px));
+}
+
+.hp {
+    width: 900px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 70px;
+    transform: translate(-50%, calc(-50% + 315px));
+    display: flex;
+    justify-content: space-between;
+}
+
+.hp__player, .hp__enemy {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    width: 200px;
+    text-align: center;
+}
+
+.hp__playerBar {
+    background: chartreuse;
+    position: relative;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.hp__enemyBar {
+    background: red;
+    position: relative;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: auto;
+}
+
+.hp__playerBar::before, .hp__enemyBar::before {
+    content: '';
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+}
+
+.hp__playerBar::before {
+    left: 0;
+    border: 1px solid chartreuse;
+}
+
+.hp__enemyBar::before {
+    right: 0;
+    border: 1px solid red;
+}
+
+.winlose {
+    color: white;
+    font-weight: bold;
+    font-size: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 100;
+}
+
+.hide {
+    display: none;
+}
